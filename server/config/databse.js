@@ -14,9 +14,9 @@ const connectDatabase = () => {
     .then((data) => {
       console.log(`connected to ${data.connection.host}`);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
 };
 
 module.exports = connectDatabase;
