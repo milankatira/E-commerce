@@ -8,9 +8,12 @@ const errorMiddleware = require("./middleware/error");
 
 const product = require("./routes/productRoute");
 
+const user = require("./routes/userRoutes");
+
 app.use("/api/v1", product);
 
-//error middleware
+app.use('/api/v1',user);
+
 app.use(errorMiddleware);
 
 module.exports = app;
