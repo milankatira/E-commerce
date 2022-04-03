@@ -6,7 +6,6 @@ app.use(express.json());
 
 const errorMiddleware = require("./middleware/error");
 
-//rotes import
 const product = require("./routes/productRoute");
 
 app.use("/api/v1", product);

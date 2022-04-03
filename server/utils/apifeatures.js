@@ -1,7 +1,7 @@
 class ApiFeatures {
-  constructor(query, quertStr) {
+  constructor(query, queryStr) {
     this.query = query;
-    this.quertStr = quertStr;
+    this.queryStr = queryStr;
   }
 
   search() {
@@ -13,10 +13,31 @@ class ApiFeatures {
           },
         }
       : {};
-      console.log(keyword)
-      
-      this.query=this.query.find({...keyword});
-      return this;
+
+    this.query = this.query.find({ ...keyword });
+    return this;
+  }
+
+  filter() {
+    //TODO COPY of query
+    const queryObj = { ...this.queryStr };
+
+    //TODO remove below field
+    const excludedFields = ["page", "sort", "limit", "keyword"];
+    excludedFields.forEach((el) => delete queryObj[el]);
+
+    let queryStr = JSON.stringify(queryObj);
+
+    queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+    this.query = this.query.find(JSON.parse(queryStr));
+    return this;
+  }
+
+  pagination(resultPerPage) {
+    const currentPage = Number(this.queryStr.page) || 1;
+    const skip = resultPerPage * (currentPage - 1);
+    this.query = this.query.skip(skip).limit(resultPerPage);
+    return this;
   }
 }
 
