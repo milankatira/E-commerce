@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import React from "react";
 import webfont from "webfontloader";
 import Footer from "./components/layout/footer/Footer";
-import Home from './components/home/Home'
+import Home from "./components/home/Home";
+import ProductDetail from "./components/Product/ProductDetails";
 function App() {
   React.useEffect(() => {
     webfont.load({
@@ -16,9 +17,9 @@ function App() {
   return (
     <Router>
       <Header />
-      <Route exact path="/" component={Home}/>
-
-      <Footer/>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/product/:id" component={ProductDetail} />
+      <Footer />
     </Router>
   );
 }

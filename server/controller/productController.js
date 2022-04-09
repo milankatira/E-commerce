@@ -18,7 +18,8 @@ exports.createProduct = catchAsyncError(async (req, res, next) => {
 
 //get all product
 exports.getAllProducts = catchAsyncError(async (req, res) => {
-  let resultPerPage = 5;
+  let resultPerPage = 8;
+
   const productCount = await Product.countDocuments();
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
@@ -158,16 +159,19 @@ exports.deleteProductReview = catchAsyncError(async (req, res, next) => {
 
   const numOfReviews = product.reviews.length;
 
-  await Product.findByIdAndUpdate(req.query.productId, {
-    review,
-    rating,
-    numOfReviews,
-    
-  },{
-    new: true,
-    runValidators: true,
-    useFindAndModify: false,
-  })
+  await Product.findByIdAndUpdate(
+    req.query.productId,
+    {
+      review,
+      rating,
+      numOfReviews,
+    },
+    {
+      new: true,
+      runValidators: true,
+      useFindAndModify: false,
+    }
+  );
 
   await product.save({ validatBeforeSave: false });
 
