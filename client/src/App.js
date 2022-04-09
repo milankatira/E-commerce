@@ -6,6 +6,7 @@ import webfont from "webfontloader";
 import Footer from "./components/layout/footer/Footer";
 import Home from "./components/home/Home";
 import ProductDetail from "./components/Product/ProductDetails";
+import Product from "./components/Product/Product";
 function App() {
   React.useEffect(() => {
     webfont.load({
@@ -19,6 +20,8 @@ function App() {
       <Header />
       <Route exact path="/" component={Home} />
       <Route exact path="/product/:id" component={ProductDetail} />
+      <Route exact path="/products" component={Product} />
+
       <Footer />
     </Router>
   );
