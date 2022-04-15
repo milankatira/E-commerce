@@ -99,7 +99,9 @@
 
 #registerImage > img {
   width: 3vmax;
-  border-radius: 100%;
+  height: 3vmax;
+  border-radius: 50%;
+  padding: 5px;
 }
 #registerImage > input {
   display: flex;

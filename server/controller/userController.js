@@ -4,14 +4,24 @@ const catchAsyncError = require("../middleware/catchAsyncError");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
+
 exports.registerUser = catchAsyncError(async (req, res, next) => {
-  const { name, email, password, role } = req.body;
+  // const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+  //   folder: "avatars",
+  //   width: 150,
+  //   crop: "scale",
+  // });
+  const { name, email, password } = req.body;
   const user = await User.create({
     name,
     email,
     password,
-    avatar: { public_id: "hbhb", url: "hbbhbh" },
+    avatar: {
+      public_id: "jjj",
+      url: "nnn",
+    },
   });
+
   sendToken(user, 201, res);
 });
 
@@ -185,12 +195,11 @@ exports.getUserByid = catchAsyncError(async (req, res, next) => {
   });
 });
 
-
-exports.updateUserRole=catchAsyncError(async(req,res,next)=>{
+exports.updateUserRole = catchAsyncError(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
     email: req.body.email,
-    role:req.body.role
+    role: req.body.role,
   };
 
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
@@ -217,4 +226,4 @@ exports.deleteUser = catchAsyncError(async (req, res, next) => {
     success: true,
     message: "user deleted successfully",
   });
-})
+});
