@@ -20,6 +20,12 @@ const user = require("./routes/userRoutes");
 
 const order = require("./routes/orderRoutes");
 
+const payment = require("./routes/paymentRoute");
+
+// const dotenv=require("dotenv");
+
+// dotenv.config({ path: "server/config/config.env" });
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(fileUpload());
@@ -29,6 +35,8 @@ app.use("/api/v1", product);
 app.use("/api/v1", user);
 
 app.use("/api/v1", order);
+
+app.use("/api/v1", payment);
 
 app.use(errorMiddleware);
 
