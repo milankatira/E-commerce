@@ -23,7 +23,7 @@
   cursor: pointer;
   background-color: #fff;
   border: 1px solid white;
-  border-radius: 0;
+  border-radius: 2px;
   padding: 1vmax;
   transition: all 0.4s;
   width: 9vmax;
@@ -64,7 +64,8 @@
   color: rgb(0, 0, 0, 0.7);
 }
 
-.container{
+.container {
+  border-radius: 10px;
   display: flex;
   margin: 2vmax auto;
   width: 80vw;
@@ -82,10 +83,13 @@
   margin: 2vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
+  border-radius: 10px;
 }
 
 .productCard > img {
   width: 14vmax;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .productCard > div {
@@ -137,5 +141,3 @@
     font: 300 1vmax " Roboto";
   }
 }
-
-
