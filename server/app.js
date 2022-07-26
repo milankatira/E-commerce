@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 
 const cookieParser = require("cookie-parser");
@@ -24,8 +24,15 @@ const payment = require("./routes/paymentRoute");
 
 // const dotenv=require("dotenv");
 
+
 // dotenv.config({ path: "server/config/config.env" });
 
+const corsOption = {
+  origin: "http://localhost:3000",
+  credentials: true,
+};
+
+app.use(cors(corsOption));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(fileUpload());
