@@ -4,7 +4,7 @@ export default function Index() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className='dark:bg-gray-900'>
+    <div className='dark:bg-gray-900 sticky top-0 w-full z-10 bg-white'>
       <div className='container mx-auto relative'>
         <div className='py-4 mx-4 md:mx-6'>
           <div className='flex items-center justify-between border-b border-gray-200 dark:border-gray-700 py-4'>
@@ -15,7 +15,7 @@ export default function Index() {
                 aria-label='luxe. Logo.'
               >
                 <svg
-                  className='fill-stroke dark:text-blue-500 text-gray-900'
+                  className='fill-stroke text-gray-900'
                   width={55}
                   height={25}
                   viewBox='0 0 55 25'
@@ -34,7 +34,7 @@ export default function Index() {
                 aria-label='luxe. Logo.'
               >
                 <svg
-                  className='fill-stroke dark:text-blue-500 text-gray-800'
+                  className='fill-stroke text-gray-800'
                   width={44}
                   height={20}
                   viewBox='0 0 44 20'
@@ -53,7 +53,7 @@ export default function Index() {
                 aria-label='luxe. Logo.'
               >
                 <svg
-                  className='fill-stroke dark:text-blue-500 text-gray-800'
+                  className='fill-stroke text-gray-800'
                   width={37}
                   height={17}
                   viewBox='0 0 37 17'
@@ -72,7 +72,7 @@ export default function Index() {
                 <li>
                   <a
                     href='javascript:void(0)'
-                    className='dark:text-blue-500 dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
+                    className=' dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
                   >
                     {' '}
                     New{' '}
@@ -81,7 +81,7 @@ export default function Index() {
                 <li>
                   <a
                     href='javascript:void(0)'
-                    className='dark:text-blue-500 dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
+                    className=' dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
                   >
                     {' '}
                     Men{' '}
@@ -90,7 +90,7 @@ export default function Index() {
                 <li>
                   <a
                     href='javascript:void(0)'
-                    className='dark:text-blue-500 dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
+                    className=' dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
                   >
                     {' '}
                     Women{' '}
@@ -99,7 +99,7 @@ export default function Index() {
                 <li>
                   <a
                     href='javascript:void(0)'
-                    className='dark:text-blue-500 dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
+                    className=' dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
                   >
                     {' '}
                     Kids{' '}
@@ -108,7 +108,7 @@ export default function Index() {
                 <li>
                   <a
                     href='javascript:void(0)'
-                    className='dark:text-blue-500 dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
+                    className='dark:hover:text-gray-300 text-base text-right text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline'
                   >
                     {' '}
                     Magazine{' '}
@@ -123,7 +123,7 @@ export default function Index() {
                 className='focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded'
               >
                 <svg
-                  className='fill-stroke text-gray-800 dark:text-blue-500'
+                  className='fill-stroke text-gray-800'
                   width={18}
                   height={20}
                   viewBox='0 0 18 20'
@@ -152,7 +152,7 @@ export default function Index() {
                 className='focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded'
               >
                 <svg
-                  className='fill-stroke text-gray-800 dark:text-blue-500'
+                  className='fill-stroke text-gray-800'
                   width={22}
                   height={20}
                   viewBox='0 0 22 20'
@@ -174,7 +174,7 @@ export default function Index() {
                 className='focus:outline-none focus:ring-2 focus:ring-gray-800 hover:bg-gray-100 p-0.5 rounded'
               >
                 <svg
-                  className='fill-stroke text-gray-800 dark:text-blue-500'
+                  className='fill-stroke text-gray-800'
                   width={20}
                   height={22}
                   viewBox='0 0 20 22'
@@ -212,7 +212,7 @@ export default function Index() {
                 className='focus:outline-none focus:ring-2 focus:ring-gray-800 rounded'
               >
                 <svg
-                  className='fill-stroke text-gray-800 dark:text-blue-500'
+                  className='fill-stroke text-gray-800'
                   width={24}
                   height={24}
                   viewBox='0 0 24 24'
@@ -244,10 +244,10 @@ export default function Index() {
               </button>
             </div>
           </div>
-          <div className='mt-4 pb-4 flex space-x-3 border-b border-gray-200 dark:border-gray-700'>
+          <div className='mt-4 pb-4 flex space-x-3  border-b border-gray-200 dark:border-gray-700'>
             <div>
               <svg
-                className='fill-stroke text-gray-600 dark:text-blue-500'
+                className='fill-stroke text-gray-600'
                 width={20}
                 height={20}
                 viewBox='0 0 20 20'
@@ -281,13 +281,13 @@ export default function Index() {
           id='mobile-menu'
           className={`${
             showMenu ? 'flex' : 'hidden'
-          } dark:bg-gray-900 md:hidden absolute inset-0 z-100 flex-col w-full h-screen bg-blue-500 pt-6`}
+          } dark:bg-gray-900 md:hidden transition-all duration-300 absolute z-40 inset-0 z-100 flex-col w-full h-screen pt-6 bg-white`}
         >
           <div className='w-full'>
             <div className='flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-3 mx-4'>
               <div role='img' aria-label='Luxe. Logo'>
                 <svg
-                  className='fill-stroke text-gray-800 dark:text-blue-500'
+                  className='fill-stroke text-gray-800 bg-white'
                   width={37}
                   height={17}
                   viewBox='0 0 37 17'
