@@ -28,7 +28,7 @@ const payment = require("./routes/paymentRoute");
 // dotenv.config({ path: "server/config/config.env" });
 
 const corsOption = {
-  origin: "http://localhost:3000",
+  origin: ["http://localhost:3000", "http://localhost:3001"],
   credentials: true,
 };
 

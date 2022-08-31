@@ -34,13 +34,13 @@ const initialState = {
   loading: true,
 };
 
-function AuthProvider(props: JSX.IntrinsicAttributes & React.ProviderProps<{ signUp: { data: null; error: null; }; SignIn: { data: null; error: null; }; authUser: null; authError: null; authStatus: null; forgotPassword: { data: null; error: null; }; newPassword: { data: null; error: null; }; verifyEmail: { data: null; error: null; }; loading: boolean; }>) {
+function AuthProvider(props:any) {
   const [auth, dispatch] = useReducer(Auth, initialState);
 
   const LoginUser = (packet: any) => {
     dispatch(setLoading(true));
     LoginApi(packet)
-      .then((res: { data: any; }) => {
+      .then((res: { data: any }) => {
         Router.push('/home');
         dispatch(setLoading(false));
         dispatch(authStatusSuccess(res.data));

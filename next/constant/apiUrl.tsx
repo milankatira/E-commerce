@@ -2,7 +2,7 @@ import { server_url } from '../config/appConfig';
 
 //TODO AUTH URL
 
-export const login_url = `${server_url}/api/login`;
+export const login_url = `${server_url}/api/v1/login`;
 
 export const signup_url = `${server_url}/api/register`;
 
