@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+// import router from 'next/router';
+import React, { useEffect, useState } from 'react';
 
 export default function Index() {
   const [showMenu, setShowMenu] = useState(false);
+  const arrayPaths = ['/'];  
+  // console.log(router.pathname, 'GG', window.location.pathname);
+  const [onTop, setOnTop] = useState(
+    false
+    // !arrayPaths.includes(router.pathname) ? false : true,
+  );
+
+  const headerClass = () => {
+    if (window.pageYOffset === 0) {
+      setOnTop(true);
+    } else {
+      setOnTop(false);
+    }
+  };
+
+  useEffect(() => {
+    if (!arrayPaths.includes(window.location.pathname)) {
+      return;
+    }
+
+    headerClass();
+    window.onscroll = function () {
+      headerClass();
+    };
+  }, []);
+
 
   return (
-    <div className='dark:bg-gray-900 sticky top-0 w-full z-10 bg-white'>
+    <div
+      className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}
+    >
       <div className='container mx-auto relative'>
         <div className='py-4 mx-4 md:mx-6'>
           <div className='flex items-center justify-between border-b border-gray-200 dark:border-gray-700 py-4'>
@@ -369,7 +398,7 @@ export default function Index() {
               <li className='border-b border-gray-200 dark:border-gray-700 dark:text-gray-700 pb-4 px-1 flex items-center justify-between'>
                 <a
                   href='javascript:void(0)'
-                  className='dark:text-blue-500 focus:outline-none focus:ring-2 focus:ring-gray-800 text-base text-gray-800 hover:underline'
+                  className='dark:text-blue-500 focus:outline-none focus:ring-2 focus:ring-gray-800 text-base text-gray-900 hover:underline'
                 >
                   {' '}
                   Men{' '}

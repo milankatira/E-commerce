@@ -5,7 +5,7 @@ const Checkout = () => {
   const [menu, setMenu] = useState(false);
   const [country, setCountry] = useState('United States');
 
-  const changeText = (e) => {
+  const changeText = (e:any) => {
     setMenu(false);
     setCountry(e.target.textContent);
   };
@@ -161,7 +161,6 @@ const Checkout = () => {
                 <div className='relative'>
                   <button
                     className='text-left border rounded-tr rounded-tl border-gray-300 p-4 w-full text-base leading-4 placeholder-gray-600 text-gray-600 bg-white'
-                    type='email'
                   >
                     {country}
                   </button>
