@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
-const Id = ({ product }:any) => {
-  console.log(product, 'FF');
+const Id = ({ product }: any) => {
   return (
     <div>
       <section className='text-gray-600 body-font overflow-hidden'>
@@ -29,7 +28,7 @@ const Id = ({ product }:any) => {
                     strokeLinecap='round'
                     strokeLinejoin='round'
                     strokeWidth='2'
-                    className='w-4 h-4 text-indigo-500'
+                    className='w-4 h-4 text-pink-500'
                     viewBox='0 0 24 24'
                   >
                     <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
@@ -40,7 +39,7 @@ const Id = ({ product }:any) => {
                     strokeLinecap='round'
                     strokeLinejoin='round'
                     strokeWidth='2'
-                    className='w-4 h-4 text-indigo-500'
+                    className='w-4 h-4 text-pink-500'
                     viewBox='0 0 24 24'
                   >
                     <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
@@ -51,7 +50,7 @@ const Id = ({ product }:any) => {
                     strokeLinecap='round'
                     strokeLinejoin='round'
                     strokeWidth='2'
-                    className='w-4 h-4 text-indigo-500'
+                    className='w-4 h-4 text-pink-500'
                     viewBox='0 0 24 24'
                   >
                     <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
@@ -62,7 +61,7 @@ const Id = ({ product }:any) => {
                     strokeLinecap='round'
                     strokeLinejoin='round'
                     strokeWidth='2'
-                    className='w-4 h-4 text-indigo-500'
+                    className='w-4 h-4 text-pink-500'
                     viewBox='0 0 24 24'
                   >
                     <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
@@ -73,7 +72,7 @@ const Id = ({ product }:any) => {
                     strokeLinecap='round'
                     strokeLinejoin='round'
                     strokeWidth='2'
-                    className='w-4 h-4 text-indigo-500'
+                    className='w-4 h-4 text-pink-500'
                     viewBox='0 0 24 24'
                   >
                     <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>
@@ -119,20 +118,18 @@ const Id = ({ product }:any) => {
                   </a>
                 </span>
               </div>
-              <p className='leading-relaxed'>
-        {product.description}
-              </p>
+              <p className='leading-relaxed'>{product.description}</p>
               <div className='flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5'>
                 <div className='flex'>
                   <span className='mr-3'>Color</span>
                   <button className='border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none'></button>
                   <button className='border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none'></button>
-                  <button className='border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none'></button>
+                  <button className='border-2 border-gray-300 ml-1 bg-pink-500 rounded-full w-6 h-6 focus:outline-none'></button>
                 </div>
                 <div className='flex ml-6 items-center'>
                   <span className='mr-3'>Size</span>
                   <div className='relative'>
-                    <select className='rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10'>
+                    <select className='rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-500 text-base pl-3 pr-10'>
                       <option>SM</option>
                       <option>M</option>
                       <option>L</option>
@@ -158,7 +155,7 @@ const Id = ({ product }:any) => {
                 <span className='title-font font-medium text-2xl text-gray-900'>
                   {product?.price}
                 </span>
-                <button className='flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded'>
+                <button className='flex ml-auto text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded'>
                   Buy now
                 </button>
                 <button className='rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>

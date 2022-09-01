@@ -16,20 +16,10 @@ const SignUp = () => {
     axios
       .post('http://localhost:4000/api/register', { ...packet })
       .then((res) => {
-        // toast.success(res?.data?.message);
-        // const serialized = cookie.serialize('token', res?.data?.token, {
-        //   httpOnly: false,
-        //   secure: process.env.MODE_ENV !== 'development',
-        //   sameSite: 'strict',
-        //   maxAge: 60 * 60 * 24 * 1, // 1 day
-        //   path: '/',
-        // });
-        // //  ("Set-Cookie", serialized);
-        // Router.push('/myprofile');
+       
       })
       .catch((err) => {
         console.log(err);
-        // toast.error(err?.response?.data?.message);
       });
   };
 
