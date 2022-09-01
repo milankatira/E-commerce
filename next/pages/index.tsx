@@ -6,7 +6,7 @@ import Link from 'next/link';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-const Feature15 = ({ userData }:any) => {
+const Feature15 = ({ userData }: any) => {
   return (
     <div className='2xl:mx-auto 2xl:container -mt-36'>
       <Carousel
@@ -37,7 +37,7 @@ const Feature15 = ({ userData }:any) => {
         <section className='text-gray-600 body-font'>
           <div className='container px-5 py-24 mx-auto'>
             <div className='flex flex-wrap -m-4'>
-              {userData.map((data:any) => {
+              {userData.map((data: any) => {
                 return (
                   <>
                     <Link href={`/product/${data._id}`}>

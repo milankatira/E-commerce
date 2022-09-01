@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import Router from 'next/router';
 import { useAuthcontext } from '../../context/AuthContext';
 const NewLogin = () => {
-  const { Auth_api } = useAuthcontext();
+  const { Auth_api }:any = useAuthcontext();
 
   interface Data {
     email: string;

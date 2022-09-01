@@ -80,7 +80,9 @@ function App() {
         <Route exact path="/" component={Home} />
 
         <Route exact path="/product/:id" component={ProductDetail} />
+
         <Route exact path="/products" component={Product} />
+
         <Route exact path="/products/:keyword" component={Product} />
 
         <Route exact path="/search" component={Search} />
@@ -90,7 +92,9 @@ function App() {
         <Route exact path="/about" component={About} />
 
         <Route exact path="/login" component={LoginSignup} />
+
         <Route exact path="/signup" component={LoginSignup} />
+
         <ProtectedRoute exact path="/account" component={Profile} />
 
         <ProtectedRoute exact path="/me/update" component={UpdateProfile} />

@@ -1,14 +1,12 @@
 // import router from 'next/router';
 import React, { useEffect, useState } from 'react';
-
+import { useAuthcontext } from '../context/AuthContext';
 export default function Index() {
   const [showMenu, setShowMenu] = useState(false);
-  const arrayPaths = ['/'];  
-  // console.log(router.pathname, 'GG', window.location.pathname);
-  const [onTop, setOnTop] = useState(
-    false
-    // !arrayPaths.includes(router.pathname) ? false : true,
-  );
+  const arrayPaths = ['/'];
+  const { Auth_api, auth }: any = useAuthcontext();
+  console.log(auth?.authStatus?.user?.name, 'auth');
+  const [onTop, setOnTop] = useState(false);
 
   const headerClass = () => {
     if (window.pageYOffset === 0) {
@@ -28,12 +26,12 @@ export default function Index() {
       headerClass();
     };
   }, []);
-
+  useEffect(() => {
+    Auth_api.AuthUser();
+  }, []);
 
   return (
-    <div
-      className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}
-    >
+    <div className={`site-header ${!onTop ? 'site-header--fixed' : ''}`}>
       <div className='container mx-auto relative'>
         <div className='py-4 mx-4 md:mx-6'>
           <div className='flex items-center justify-between border-b border-gray-200 dark:border-gray-700 py-4'>
@@ -233,8 +231,10 @@ export default function Index() {
                   />
                 </svg>
               </a>
+              <h1 className='text-black'>{auth?.authStatus?.user?.name}</h1>
             </div>
-            <div className='md:hidden'>
+            <div className='md:hidden flex flex-row'>
+              <h1 className='text-black mr-4'>{auth?.authStatus?.user?.name}</h1>
               <button
                 aria-label='open menu'
                 onClick={() => setShowMenu(true)}

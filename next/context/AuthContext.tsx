@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext } from 'react';
 
 import Auth from './Reducer/Auth';
 
-import { LoginApi } from '../api/Auth';
+import { LoginApi, AuthUserApi } from '../api/Auth';
 
 import { authStatusSuccess, setLoading } from './Actions/Auth';
 
@@ -34,7 +34,7 @@ const initialState = {
   loading: true,
 };
 
-function AuthProvider(props:any) {
+function AuthProvider(props: any) {
   const [auth, dispatch] = useReducer(Auth, initialState);
 
   const LoginUser = (packet: any) => {
@@ -50,22 +50,21 @@ function AuthProvider(props:any) {
       });
   };
 
-  // const AuthUser = () => {
-  //   dispatch(setLoading(true));
-  //   AuthUserApi()
-  //     .then((res) => {
-  //       dispatch(setLoading(false));
-  //       Router.push('/home');
-  //       dispatch(authStatusSuccess(res.data));
-  //     })
-  //     .catch((err) => {
-  //       dispatch(setLoading(false));
-  //     });
-  // };
+  const AuthUser = () => {
+    dispatch(setLoading(true));
+    AuthUserApi()
+      .then((res: any) => {
+        dispatch(setLoading(false));
+        dispatch(authStatusSuccess(res.data));
+      })
+      .catch((err: any) => {
+        dispatch(setLoading(false));
+      });
+  };
 
   const Auth_api = {
     LoginUser,
-    // AuthUser,
+    AuthUser,
   };
 
   const authData = { auth, dispatch, Auth_api };
