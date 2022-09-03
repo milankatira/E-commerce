@@ -1,0 +1,2 @@
+# E-commerce
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/28d5dfc6402c4615ae2ecda7143dee18)](https://app.codacy.com/gh/milankatira/E-commerce?utm_source=github.com&utm_medium=referral&utm_content=milankatira/E-commerce&utm_campaign=Badge_Grade_Settings)
