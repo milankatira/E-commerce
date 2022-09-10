@@ -135,6 +135,7 @@ const Id = ({ product }: any) => {
                       <option>L</option>
                       <option>XL</option>
                     </select>
+
                     <span className='absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center'>
                       <svg
                         fill='none'
@@ -151,7 +152,15 @@ const Id = ({ product }: any) => {
                   </div>
                 </div>
               </div>
-              <div className='flex'>
+              <button className='transition-all duration-300 w-10 h-10 text-center bg-pink-500 rounded-full text-white hover:bg-white hover:text-black border hover:border-2 hover:border-gray-200'>
+                +
+              </button>
+              <span className='m-4'>2</span>
+              <button className='w-10 h-10 text-center bg-pink-500 rounded-full text-white'>
+                -
+              </button>
+
+              <div className='flex mt-4'>
                 <span className='title-font font-medium text-2xl text-gray-900'>
                   {product?.price}
                 </span>
