@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
 
 const Id = ({ product }: any) => {
+  const [item, setitem] = useState<number>(1);
   return (
     <div>
       <section className='text-gray-600 body-font overflow-hidden'>
@@ -152,11 +153,17 @@ const Id = ({ product }: any) => {
                   </div>
                 </div>
               </div>
-              <button className='transition-all duration-300 w-10 h-10 text-center bg-pink-500 rounded-full text-white hover:bg-white hover:text-black border hover:border-2 hover:border-gray-200'>
+              <button
+                onClick={() => setitem(item + 1)}
+                className='transition-all duration-300 w-10 h-10 text-center bg-pink-500 rounded-full text-white hover:bg-white hover:text-black border hover:border-2 hover:border-gray-200'
+              >
                 +
               </button>
-              <span className='m-4'>2</span>
-              <button className='w-10 h-10 text-center bg-pink-500 rounded-full text-white'>
+              <span className='m-4'>{item}</span>
+              <button
+                onClick={() => setitem(item + 1)}
+                className='w-10 h-10 text-center bg-pink-500 rounded-full text-white'
+              >
                 -
               </button>
 
@@ -167,6 +174,7 @@ const Id = ({ product }: any) => {
                 <button className='flex ml-auto text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded'>
                   Buy now
                 </button>
+
                 <button className='rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4'>
                   <svg
                     fill='currentColor'
